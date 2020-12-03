@@ -1,4 +1,4 @@
-cmd_/home/ubuntu/myled/myled.o := gcc -Wp,-MD,/home/ubuntu/myled/.myled.o.d  -nostdinc -isystem /usr/lib/gcc/aarch64-linux-gnu/9/include  -I./arch/arm64/include -I./arch/arm64/include/generated  -I./include -I./arch/arm64/include/uapi -I./arch/arm64/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -include ./include/linux/compiler_types.h -D__KERNEL__ -mlittle-endian -DKASAN_SHADOW_SCALE_SHIFT=3 -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -std=gnu89 -mgeneral-regs-only -DCONFIG_AS_LSE=1 -DCONFIG_CC_HAS_K_CONSTRAINT=1 -fno-asynchronous-unwind-tables -Wno-psabi -mabi=lp64 -mbranch-protection=none -DKASAN_SHADOW_SCALE_SHIFT=3 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fstack-protector-strong -Wno-unused-but-set-variable -Wimplicit-fallthrough -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -Wno-stringop-truncation -Wno-array-bounds -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -fno-strict-overflow -fno-merge-all-constants -fmerge-constants -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -fmacro-prefix-map=./= -Wno-packed-not-aligned -mstack-protector-guard=sysreg -mstack-protector-guard-reg=sp_el0 -mstack-protector-guard-offset=1328  -DMODULE  -DKBUILD_BASENAME='"myled"' -DKBUILD_MODNAME='"myled"' -c -o /home/ubuntu/myled/myled.o /home/ubuntu/myled/myled.c
+cmd_/home/ubuntu/myled/myled.o := gcc -Wp,-MD,/home/ubuntu/myled/.myled.o.d  -nostdinc -isystem /usr/lib/gcc/aarch64-linux-gnu/9/include  -I./arch/arm64/include -I./arch/arm64/include/generated  -I./include -I./arch/arm64/include/uapi -I./arch/arm64/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -include ./include/linux/compiler_types.h -D__KERNEL__ -mlittle-endian -DKASAN_SHADOW_SCALE_SHIFT=3 -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -std=gnu89 -mgeneral-regs-only -DCONFIG_AS_LSE=1 -DCONFIG_CC_HAS_K_CONSTRAINT=1 -fno-asynchronous-unwind-tables -Wno-psabi -mabi=lp64 -mbranch-protection=none -DKASAN_SHADOW_SCALE_SHIFT=3 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fstack-protector-strong -Wno-unused-but-set-variable -Wimplicit-fallthrough -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -Wno-stringop-truncation -Wno-array-bounds -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -fno-strict-overflow -fno-merge-all-constants -fmerge-constants -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -fmacro-prefix-map=./= -Wno-packed-not-aligned -mstack-protector-guard=sysreg -mstack-protector-guard-reg=sp_el0 -mstack-protector-guard-offset=1296  -DMODULE  -DKBUILD_BASENAME='"myled"' -DKBUILD_MODNAME='"myled"' -c -o /home/ubuntu/myled/myled.o /home/ubuntu/myled/myled.c
 
 source_/home/ubuntu/myled/myled.o := /home/ubuntu/myled/myled.c
 
@@ -299,36 +299,12 @@ deps_/home/ubuntu/myled/myled.o := \
   include/uapi/asm-generic/ioctl.h \
   include/linux/irqnr.h \
   include/uapi/linux/irqnr.h \
-  include/linux/prandom.h \
-  include/linux/percpu.h \
-    $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
-    $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
-    $(wildcard include/config/have/setup/per/cpu/area.h) \
-  include/linux/smp.h \
-    $(wildcard include/config/up/late/init.h) \
-  include/linux/errno.h \
-  include/uapi/linux/errno.h \
+  arch/arm64/include/asm/fpsimd.h \
   arch/arm64/include/generated/uapi/asm/errno.h \
   include/uapi/asm-generic/errno.h \
   include/uapi/asm-generic/errno-base.h \
-  include/linux/cpumask.h \
-    $(wildcard include/config/cpumask/offstack.h) \
-    $(wildcard include/config/hotplug/cpu.h) \
-    $(wildcard include/config/debug/per/cpu/maps.h) \
-  include/linux/threads.h \
-    $(wildcard include/config/base/small.h) \
-  include/linux/bitmap.h \
-  include/linux/llist.h \
-    $(wildcard include/config/arch/have/nmi/safe/cmpxchg.h) \
-  arch/arm64/include/asm/smp.h \
-    $(wildcard include/config/arm64/acpi/parking/protocol.h) \
-  arch/arm64/include/asm/percpu.h \
-  include/asm-generic/percpu.h \
-  include/linux/percpu-defs.h \
-    $(wildcard include/config/debug/force/weak/per/cpu.h) \
-    $(wildcard include/config/amd/mem/encrypt.h) \
-  arch/arm64/include/asm/fpsimd.h \
   arch/arm64/include/uapi/asm/sigcontext.h \
+  include/linux/bitmap.h \
   arch/arm64/include/generated/asm/qspinlock.h \
   include/asm-generic/qspinlock.h \
   include/linux/rwlock.h \
@@ -374,6 +350,26 @@ deps_/home/ubuntu/myled/myled.o := \
   arch/arm64/include/asm/timex.h \
   arch/arm64/include/asm/arch_timer.h \
     $(wildcard include/config/arm/arch/timer/ool/workaround.h) \
+  include/linux/smp.h \
+    $(wildcard include/config/up/late/init.h) \
+  include/linux/errno.h \
+  include/uapi/linux/errno.h \
+  include/linux/cpumask.h \
+    $(wildcard include/config/cpumask/offstack.h) \
+    $(wildcard include/config/hotplug/cpu.h) \
+    $(wildcard include/config/debug/per/cpu/maps.h) \
+  include/linux/threads.h \
+    $(wildcard include/config/base/small.h) \
+  include/linux/llist.h \
+    $(wildcard include/config/arch/have/nmi/safe/cmpxchg.h) \
+  arch/arm64/include/asm/smp.h \
+    $(wildcard include/config/arm64/acpi/parking/protocol.h) \
+  arch/arm64/include/asm/percpu.h \
+  include/asm-generic/percpu.h \
+    $(wildcard include/config/have/setup/per/cpu/area.h) \
+  include/linux/percpu-defs.h \
+    $(wildcard include/config/debug/force/weak/per/cpu.h) \
+    $(wildcard include/config/amd/mem/encrypt.h) \
   include/clocksource/arm_arch_timer.h \
     $(wildcard include/config/arm/arch/timer.h) \
   include/linux/timecounter.h \
@@ -505,6 +501,9 @@ deps_/home/ubuntu/myled/myled.o := \
     $(wildcard include/config/timerfd.h) \
   include/linux/hrtimer_defs.h \
   include/linux/rbtree.h \
+  include/linux/percpu.h \
+    $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
+    $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
   include/linux/timerqueue.h \
   include/linux/seccomp.h \
     $(wildcard include/config/seccomp.h) \
@@ -764,7 +763,6 @@ deps_/home/ubuntu/myled/myled.o := \
     $(wildcard include/config/devtmpfs.h) \
     $(wildcard include/config/sysfs/deprecated.h) \
   include/linux/ioport.h \
-    $(wildcard include/config/io/strict/devmem.h) \
   include/linux/klist.h \
   include/linux/pm.h \
     $(wildcard include/config/vt/console/sleep.h) \
