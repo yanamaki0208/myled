@@ -3,7 +3,7 @@
 This illuminates the LEDs on pins 23, 24, and 25.
 
 # DEMO
-![スクリーンショット (205)](https://user-images.githubusercontent.com/66021066/101281667-a7761580-3813-11eb-90ee-68251cc51d07.png)
+![スクリーンショット (207)](https://user-images.githubusercontent.com/66021066/101283347-15730a80-381d-11eb-900f-b3c516a028a8.png)
 
 # Usage
 
