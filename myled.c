@@ -21,7 +21,7 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 {
         char c;
         if(copy_from_user(&c,buf,sizeof(char)))
-        return -EFAULT;
+        	return -EFAULT;
         if(c == '0')
                 gpio_base1[10] = 1 << 23;
         else if(c == '1')
@@ -57,37 +57,38 @@ static int __init init_mod(void)
                 return retval;
         }
 
-cls = class_create(THIS_MODULE,"myled");
+	cls = class_create(THIS_MODULE,"myled");
         if(IS_ERR(cls)){
                 printk(KERN_ERR "class_create failed.");
-                return PTR_ERR(cls);}
-device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
+                return PTR_ERR(cls);
+	}
+	device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
 
-gpio_base1 = ioremap_nocache(0x3f200000,0xA0);
+	gpio_base1 = ioremap_nocache(0x3f200000,0xA0);
 
-const u32 led1 = 23;
-const u32 index1 = led1/10;
-const u32 shift1 = (led1%10*3);
-const u32 mask1 =~(0x7<<shift1);
-gpio_base1[index1] = (gpio_base1[index1 & mask1]) | (0x1 << shift1);
+	const u32 led1 = 23;
+	const u32 index1 = led1/10;
+	const u32 shift1 = (led1%10*3);
+	const u32 mask1 =~(0x7<<shift1);
+	gpio_base1[index1] = (gpio_base1[index1 & mask1]) | (0x1 << shift1);
 
-gpio_base2 = ioremap_nocache(0x3f200000,0xA0);
+	gpio_base2 = ioremap_nocache(0x3f200000,0xA0);
 
-const u32 led2 = 24;
-const u32 index2 = led2/10;
-const u32 shift2 = (led2%10*3);
-const u32 mask2 =~(0x7<<shift2);
-gpio_base2[index2] = (gpio_base2[index2 & mask2]) | (0x1 << shift2);
+	const u32 led2 = 24;
+	const u32 index2 = led2/10;
+	const u32 shift2 = (led2%10*3);
+	const u32 mask2 =~(0x7<<shift2);
+	gpio_base2[index2] = (gpio_base2[index2 & mask2]) | (0x1 << shift2);
 
-gpio_base3 = ioremap_nocache(0x3f200000,0xA0);
+	gpio_base3 = ioremap_nocache(0x3f200000,0xA0);
 
-const u32 led3 = 25;
-const u32 index3 = led3/10;
-const u32 shift3 = (led3%10*3);
-const u32 mask3 =~(0x7<<shift3);
-gpio_base3[index3] = (gpio_base3[index3 & mask3]) | (0x1 << shift3);
+	const u32 led3 = 25;
+	const u32 index3 = led3/10;
+	const u32 shift3 = (led3%10*3);
+	const u32 mask3 =~(0x7<<shift3);
+	gpio_base3[index3] = (gpio_base3[index3 & mask3]) | (0x1 << shift3);
        
-		 return 0;
+	return 0;
 }
 
 static void __exit cleanup_mod(void)
@@ -103,4 +104,4 @@ static void __exit cleanup_mod(void)
 }
 
 module_init(init_mod);
-module_exit(cleanup_mod);                             
+module_exit(cleanup_mod);                    
